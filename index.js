@@ -22,8 +22,9 @@ socket_io.on('connection', function(socket){
         if (msg.lastIndexOf('openUrl://',0) === 0){
             socket.broadcast.emit('url message',msg);
         }else{
-            socket.emit('Xshare Message',msg);
+            // socket.emit('Xshare Message',msg);
         }
+        socket.emit('Xshare Message',msg);
     });
 
     socket.on('disconnect', function(){
